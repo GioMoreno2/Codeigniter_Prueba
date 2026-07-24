@@ -3,6 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
+/**
+ * CI_loader
+ * 
+ * @var CI_Loader $load 
+ */
+
+public $load;
+
 	/**
 	 * Index Page for this controller.
 	 *
