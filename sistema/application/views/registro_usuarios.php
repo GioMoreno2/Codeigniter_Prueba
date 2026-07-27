@@ -28,7 +28,7 @@
         <div class="error"><?php echo validation_errors(); ?></div>
     <?php endif; ?>
 
-    <!-- ✅ CORRECCIÓN: El action ahora apunta al controlador real "usuarios" -->
+    <!-- CORRECCIÓN: El action nos ayuda ahora a apuntar al controlador real de "usuarios" -->
    <form action="<?php echo base_url('index.php/usuarios'); ?>" method="POST">
 
     <label for="curp">CURP:</label>
