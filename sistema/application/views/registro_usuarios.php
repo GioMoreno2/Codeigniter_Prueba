@@ -29,18 +29,53 @@
     <?php endif; ?>
 
     <!-- ✅ CORRECCIÓN: El action ahora apunta al controlador real "usuarios" -->
-    <form action="<?php echo base_url('index.php/usuarios'); ?>" method="POST">
-        <label for="nombre">Nombre Completo:</label>
-        <input type="text" name="us_name" value="<?php echo set_value('us_name'); ?>" required>
+   <form action="<?php echo base_url('index.php/usuarios'); ?>" method="POST">
 
-        <label for="email">Correo Electrónico:</label>
-        <input type="email" name="us_email" value="<?php echo set_value('us_email'); ?>" required>
+    <label for="curp">CURP:</label>
+    <input type="text"
+           name="us_curp"
+           value="<?php echo set_value('us_curp'); ?>"
+           pattern="^[A-Z]{4}[0-9]{6}[HM][A-Z]{5}[A-Z0-9][0-9]$"
+           maxlength="18"
+           required>
 
-        <label for="password">Contraseña:</label>
-        <input type="password" name="us_password" required>
+    <label for="nombre">Nombre Completo:</label>
+    <input type="text"
+           name="us_name"
+           value="<?php echo set_value('us_name'); ?>"
+           pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$"
+           required>
 
-        <button type="submit">Registrarme</button>
-    </form>
+    <label for="sexo">Sexo:</label>
+    <select name="us_sexo" required>
+        <option value="">Seleccione</option>
+        <option value="H">Hombre</option>
+        <option value="M">Mujer</option>
+    </select>
+
+    <label for="telefono">Teléfono:</label>
+    <input type="text"
+           name="us_telefono"
+           value="<?php echo set_value('us_telefono'); ?>"
+           pattern="^[0-9]{10}$"
+           maxlength="10"
+           required>
+
+    <label for="email">Correo Electrónico:</label>
+    <input type="email"
+           name="us_email"
+           value="<?php echo set_value('us_email'); ?>"
+           required>
+
+    <label for="password">Contraseña:</label>
+    <input type="password"
+           name="us_password"
+           minlength="8"
+           required>
+
+    <button type="submit">Registrarme</button>
+
+</form>
 </div>
 
 </body>
